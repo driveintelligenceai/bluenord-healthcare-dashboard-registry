@@ -1,0 +1,55 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "bluenord-healthcare-dashboard-registry",
+  "homepage": "https://github.com/driveintelligenceai/bluenord-healthcare-dashboard-registry",
+  "items": [
+    {
+      "name": "healthcare-dashboard-demo",
+      "type": "registry:block",
+      "title": "Healthcare Dashboard Demo",
+      "description": "A sanitized hospital marketing intelligence dashboard block with competitor metrics, campaigns, and source receipts.",
+      "dependencies": ["lucide-react", "recharts"],
+      "registryDependencies": ["badge", "card", "table"],
+      "files": [
+        {
+          "path": "components/healthcare-dashboard-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "data/healthcare-sample-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "knowledge-graph-demo",
+      "type": "registry:block",
+      "title": "Knowledge Graph Demo",
+      "description": "A sanitized hospital competitor graph block connecting systems, service lines, campaigns, source receipts, and AI prompt-standardization lanes.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["badge", "card"],
+      "files": [
+        {
+          "path": "components/knowledge-graph-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "data/healthcare-sample-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "healthcare-theme-tokens",
+      "type": "registry:theme",
+      "title": "Healthcare Theme Tokens",
+      "description": "Sanitized BlueNord-style public demo CSS variables for healthcare dashboards.",
+      "files": [
+        {
+          "path": "tokens/healthcare-theme-tokens.css",
+          "type": "registry:style"
+        }
+      ]
+    }
+  ]
+}

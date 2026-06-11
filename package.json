@@ -1,0 +1,16 @@
+{
+  "name": "bluenord-healthcare-dashboard-registry",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "registry:validate": "shadcn registry validate",
+    "registry:build": "shadcn build",
+    "registry:validate:github": "shadcn registry validate driveintelligenceai/bluenord-healthcare-dashboard-registry",
+    "registry:list": "shadcn list driveintelligenceai/bluenord-healthcare-dashboard-registry",
+    "registry:view:dashboard": "shadcn view driveintelligenceai/bluenord-healthcare-dashboard-registry/healthcare-dashboard-demo",
+    "registry:view:graph": "shadcn view driveintelligenceai/bluenord-healthcare-dashboard-registry/knowledge-graph-demo"
+  },
+  "devDependencies": {
+    "shadcn": "^4.11.0"
+  }
+}
