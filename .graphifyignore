@@ -1,0 +1,57 @@
+# .graphifyignore — canonical graphify hygiene (source: ~/Developer/Tooling/graphify-vault/graphifyignore.template)
+#
+# WHY THIS FILE EXISTS / WHY IT IS A SUPERSET:
+# graphify reads, per directory, EITHER .graphifyignore OR .gitignore — never both
+# (graphify/detect.py: prefer .graphifyignore, fall back to .gitignore). So this file
+# REPLACES the repo-root .gitignore for graph purposes and MUST also carry the normal
+# build/dependency excludes, or graphify would start graphing node_modules/dist/etc.
+# Gitignore semantics: last-match-wins; a leading "/" anchors to this file's directory.
+
+# ── regenerable graph artifacts ───────────────────────────────────────────────
+graphify-out/
+**/graphify-out/
+
+# ── dependencies / build output (all ecosystems) ──────────────────────────────
+node_modules/
+.pnp/
+.next/
+.nuxt/
+.svelte-kit/
+.astro/
+dist/
+build/
+out/
+coverage/
+.turbo/
+.cache/
+.parcel-cache/
+.vercel/
+.venv/
+venv/
+__pycache__/
+*.egg-info/
+.gradle/
+target/
+# iOS / Swift
+Pods/
+DerivedData/
+.build/
+
+# ── scraped corpus / data — NEVER graph (public-data-only, no-PHI, sensitivity) ─
+# Root-anchored so a legitimate code folder like src/data/ is NOT excluded.
+/data/
+/raw/
+/vault/
+**/semrush/
+
+# ── Claude / agent scaffolding & NON-CANONICAL worktrees ──────────────────────
+# A .claude worktree is never the canonical repo; never graph it.
+.claude/
+**/worktrees/
+
+# ── build-tool config (no real code symbols) ──────────────────────────────────
+**/fastlane/
+
+# ── misc ──────────────────────────────────────────────────────────────────────
+.git/
+*.log
