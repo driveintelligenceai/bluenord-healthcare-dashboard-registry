@@ -10,6 +10,11 @@
 # ── regenerable graph artifacts ───────────────────────────────────────────────
 graphify-out/
 **/graphify-out/
+_archive/
+_deprecated/
+_staged/
+archive/
+archives/
 
 # ── dependencies / build output (all ecosystems) ──────────────────────────────
 node_modules/
@@ -32,10 +37,27 @@ __pycache__/
 *.egg-info/
 .gradle/
 target/
+*.tmp
+*.bak
 # iOS / Swift
 Pods/
 DerivedData/
 .build/
+
+# game engines / playable builds
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+Binaries/
+Intermediate/
+Saved/
+.godot/
+.import/
+export_presets.cfg
 
 # ── scraped corpus / data — NEVER graph (public-data-only, no-PHI, sensitivity) ─
 # Root-anchored so a legitimate code folder like src/data/ is NOT excluded.
@@ -47,6 +69,9 @@ DerivedData/
 # ── Claude / agent scaffolding & NON-CANONICAL worktrees ──────────────────────
 # A .claude worktree is never the canonical repo; never graph it.
 .claude/
+.agents/
+.codex/
+.cursor/
 **/worktrees/
 
 # ── build-tool config (no real code symbols) ──────────────────────────────────
@@ -55,3 +80,48 @@ DerivedData/
 # ── misc ──────────────────────────────────────────────────────────────────────
 .git/
 *.log
+
+
+# ── raw crawl / RAG / training / private-data surfaces — NEVER graph ─────────
+.firecrawl/
+.firecrawl-competitors/
+**/.firecrawl/
+**/.firecrawl-competitors/
+/data/public/corpus/docs.jsonl
+/training/runs/
+/training/rag/index.db
+/training/dataset.jsonl
+/training/.venv/
+**/*.jsonl
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/vector_db/
+**/chroma/
+**/chromadb/
+**/.mempalace/
+/adapter/
+/adapters/
+/models/
+/handoffs/
+**/handoffs/
+
+# ── secrets / local auth / machine-local service state — NEVER graph ─────────
+.env*
+.auth/
+**/.auth/
+**/auth.json
+**/.netrc
+**/.npmrc
+**/.pypirc
+**/*service-account*
+**/*service_account*
+**/*credential*
+**/*credentials*
+**/*secret*
+**/*secrets*
+**/*token*
+onepassword-connect/
+**/onepassword-connect/
+
+# Repo-specific preserved rules from the prior .graphifyignore.
